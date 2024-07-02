@@ -4,7 +4,7 @@ const {
     login,
     logout,
     UpdatePassword,
-} = require('../controllers/userController');
+} = require('../controllers/UserController');
 
 const { isLoggedIn } = require('../middleware/auth');
 
