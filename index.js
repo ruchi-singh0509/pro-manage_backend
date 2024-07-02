@@ -31,3 +31,7 @@ app.listen(PORT, (req, res) => {
   connectDB();
   console.log(`Server is running on PORT ${PORT}`);
 });
+
+app.get('*', (req, res) => {
+  res.status(404).json({ message: 'Route not found' });
+});
