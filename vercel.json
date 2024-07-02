@@ -1,0 +1,191 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "/index.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "/routes/taskRoutes.js    ",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "/routes/userRoutes    ",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.js",
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/createtask",
+            "dest": "/taskRoutes.js",
+            "methods": [
+                "POST"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/gettaskbyid/:id",
+            "dest": "/taskRoutes.js",
+            "methods": [
+                "GET"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/getalltask",
+            "dest": "/taskRoutes.js",
+            "methods": [
+                "GET"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/edit-task/:id",
+            "dest": "/taskRoutes.js",
+            "methods": [
+                "PUT"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "PUT",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/delete-task/:id",
+            "dest": "/taskRoutes.js",
+            "methods": [
+                "DELETE"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "DELETE",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/update-state/:id",
+            "dest": "/taskRoutes.js",
+            "methods": [
+                "PUT"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "PUT",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/get-filter",
+            "dest": "/taskRoutes.js",
+            "methods": [
+                "GET"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/tasks/:taskId/checklists/:checklistId",
+            "dest": "/taskRoutes.js",
+            "methods": [
+                "PUT"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "PUT",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/signup",
+            "dest": "/userRoutes.js",
+            "methods": [
+                "POST"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/login",
+            "dest": "/userRoutes.js",
+            "methods": [
+                "POST"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/update-password",
+            "dest": "/userRoutes.js",
+            "methods": [
+                "PUT"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "PUT",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/logout",
+            "dest": "/userRoutes.js",
+            "methods": [
+                "POST"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        }
+    ]
+}
